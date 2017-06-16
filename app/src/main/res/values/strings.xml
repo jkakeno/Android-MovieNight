@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">MovieNight</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">There was an error. Please try again.</string>
+    <string name="error_ok_button_text">OK</string>
+    <string name="network_unavailable_message">Network is unavailable!</string>
+    <string name="show_overview">Show Overview</string>
+    <string-array name="media_array">
+        <item>movie</item>
+        <item>tv</item>
+    </string-array>
+
+    <string-array name="movie_genre_array">
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Animation</item>
+        <item>Comedy</item>
+        <item>Crime</item>
+        <item>Documentary</item>
+        <item>Drama</item>
+        <item>Family</item>
+        <item>Fantasy</item>
+        <item>History</item>
+        <item>Horror</item>
+        <item>Music</item>
+        <item>Mystery</item>
+        <item>Romance</item>
+        <item>Science Fiction</item>
+        <item>TV Movie</item>
+        <item>Thriller</item>
+        <item>War</item>
+        <item>Western</item>
+    </string-array>
+
+    <string-array name="tv_genre_array">
+        <item>Action &amp; Adventure</item>
+        <item>Animation</item>
+        <item>Comedy</item>
+        <item>Crime</item>
+        <item>Documentary</item>
+        <item>Drama</item>
+        <item>Family</item>
+        <item>Kids</item>
+        <item>Mystery</item>
+        <item>News</item>
+        <item>Reality</item>
+        <item>Sci-Fi &amp; Fantasy</item>
+        <item>Soap</item>
+        <item>Talk</item>
+        <item>War &amp; Politics</item>
+        <item>Western</item>
+    </string-array>
+
+    <string-array name="sort_array">
+        <item>popularity.desc</item>
+        <item>popularity.asc</item>
+        <item>release_date.desc</item>
+        <item>release_date.asc</item>
+        <item>revenue.desc</item>
+        <item>revenue.asc</item>
+        <item>primary_release_date.desc</item>
+        <item>primary_release_date.asc</item>
+        <item>original_title.desc</item>
+        <item>original_title.asc</item>
+        <item>vote_average.desc</item>
+        <item>vote_average.asc</item>
+        <item>vote_count.desc</item>
+        <item>vote_count.asc</item>
+    </string-array>
+
+</resources>
