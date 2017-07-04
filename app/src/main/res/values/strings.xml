@@ -2,7 +2,7 @@
     <string name="app_name">MovieNight</string>
     <string name="error_title">Oops! Sorry!</string>
     <string name="error_message">There was an error. Please try again.</string>
-    <string name="error_ok_button_text">OK</string>
+    <string name="ok_button_text">OK</string>
     <string name="network_unavailable_message">Network is unavailable!</string>
     <string name="show_overview">Show Overview</string>
     <string-array name="media_array">

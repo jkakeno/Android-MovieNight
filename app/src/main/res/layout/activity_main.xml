@@ -112,7 +112,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="date"
-            android:text="yyyy-mm-dd"
+            android:hint="yyyy-mm-dd"
             android:textAlignment="center"
             android:textColor="@android:color/white"/>
 
@@ -133,7 +133,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="date"
-            android:text="yyyy-mm-dd"
+            android:hint="yyyy-mm-dd"
             android:textAlignment="center"
             android:textColor="@android:color/white"/>
 

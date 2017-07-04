@@ -3,6 +3,7 @@ package com.example.jkakeno.movienight;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
@@ -46,6 +47,7 @@ public class TVShowAdapter extends RecyclerView.Adapter<TVShowAdapter.TVShowView
     public class TVShowViewHolder extends RecyclerView.ViewHolder {
         public TextView mName;
         public TextView mFirstReleaseDate;
+        public TVShow mTvShow;
 
 
         public TVShowViewHolder(final View itemView) {
@@ -55,7 +57,12 @@ public class TVShowAdapter extends RecyclerView.Adapter<TVShowAdapter.TVShowView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(itemView.getContext(),"Position: " + Integer.toString(getAdapterPosition()), Toast.LENGTH_LONG).show();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("overview", mTvShow.getOverView());
+//                    Toast.makeText(itemView.getContext(),"Position: " + Integer.toString(getAdapterPosition()), Toast.LENGTH_LONG).show();
+                    ShowOverViewDialogFragment dialog = new ShowOverViewDialogFragment();
+                    dialog.setArguments(bundle);
+                    dialog.show(((TVShowListActivity) mContext).getFragmentManager(),"");
                 }
             });
             mName = (TextView) itemView.findViewById(R.id.nameLabel);
@@ -66,6 +73,7 @@ public class TVShowAdapter extends RecyclerView.Adapter<TVShowAdapter.TVShowView
         public void bindTVShow (TVShow tvShow) {
             mName.setText(tvShow.getName());
             mFirstReleaseDate.setText(tvShow.getFirstReleaseDate());
+            mTvShow = tvShow;
         }
     }
 }

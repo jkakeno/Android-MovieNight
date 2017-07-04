@@ -2,6 +2,7 @@ package com.example.jkakeno.movienight;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,23 +39,33 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
 
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MovieViewHolder extends RecyclerView.ViewHolder {
         public TextView mTitle;
         public TextView mReleaseDate;
+        public Movie mMovie;
 
         public MovieViewHolder(View itemView) {
             super(itemView);
+            itemView.setClickable(true);
+            itemView.setFocusableInTouchMode(true);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("overview", mMovie.getOverView());
+//                    Toast.makeText(itemView.getContext(),"Position: " + Integer.toString(getAdapterPosition()), Toast.LENGTH_LONG).show();
+                    ShowOverViewDialogFragment dialog = new ShowOverViewDialogFragment();
+                    dialog.setArguments(bundle);
+                    dialog.show(((MovieListActivity) mContext).getFragmentManager(),"");
+                }
+            });
             mTitle = (TextView) itemView.findViewById(R.id.titleLabel);
             mReleaseDate = (TextView) itemView.findViewById(R.id.releaseDateLabel);
         }
         public void bindMovie(Movie movie) {
             mTitle.setText(movie.getTitle());
             mReleaseDate.setText(movie.getReleaseDate());
-        }
-        @Override
-        public void onClick(View view) {
-//Start a ShowOverViewDialogFragment when clicked on a holder
-
+            mMovie = movie;
         }
     }
 }
